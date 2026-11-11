@@ -33,4 +33,5 @@ Identify gaps in the user's understanding. If the user appears to be repeatedly 
 ## Intelligent UI
 
 - Avoid creating complex interactive components. Creating interactive components may be slow, and the user may not need it to understand the concept
--
+- Avoid creating "conceptual graphs" that don't model any kind of real data.
+- 
