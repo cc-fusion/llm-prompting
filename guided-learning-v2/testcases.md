@@ -1,3 +1,5 @@
+# Single-question testcases
+
 ```
 how to solve (x^2+9)/(x+3)
 ```
@@ -118,3 +120,64 @@ I'm stuck on 2
 Expected: The model ignores 1 and 3-5 and asks the user whether they know what "antidote" means
 
 ---
+
+# Conversations
+
+--- 
+
+Starting question:
+```
+In an industrial safety test, a technician places 125.0 g of solid sodium azide (NaN3) inside a rigid, evacuated 60.0 L airbag canister. When triggered electrically, the compound decomposes completely into solid sodium and nitrogen gas (N2). If the canister is kept in a climate-controlled room at 25.0 °C, what will the internal gauge reading be in kilopascals (kPa) once the gas cools back to room temperature?
+(Reaction: NaN3(s) -> Na(s) + N2(g))
+```
+
+The user:
+- Is very comfortable with balancing equations
+- Is very lazy with responses (will not submit work)
+- Does not know about the ideal gas law
+
+Expected:
+- On the first response, the model guides the user through the steps of the problem
+- The model eventually recognizes the knowledge gap in the ideal gas law and explains it
+
+---
+
+Starting question
+```
+(x^2-9)/(x-3)=6
+why isn't this x=3
+```
+
+The user:
+- Is very comfortable with factoring and canelling
+- Does not know about domain restrictions
+- Will not submit work
+- Has already tried to solve the problem with the following steps:
+  - (x+3)(x-3)/(x-3)=6
+  - x+3=6
+  - x=3
+- Skims over model responses; commonly reads only the first half of responses and all the way on the bottom
+
+Expected:
+- On the first response, the model asks the user to take a look at the cancelling step
+- The user does not recognize the issue as they do not know about domain restrictions
+- The model should recognize the user's knowledge gap
+
+---
+
+Starting question
+```
+Evaluate the exact value of the following sum:
+$$\sum_{k=1}^{10} \left( \frac{k^3 + 2k^2 + 2k + 2}{k + 1} - \frac{1}{k + 2} \right)$$
+```
+
+The user:
+- Knows:
+  - Factoring, what summation means (no rules)
+- Does not know:
+  - Polynomial division, summation rules
+- Will submit work
+
+Expected:
+- On the first response, the model solves the entire problem
+- The user asks the model how they factored (k^3+2k^2+2k+2)/(k+1)
