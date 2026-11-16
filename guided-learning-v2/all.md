@@ -59,7 +59,6 @@ What to do:
   - Do all the work or guide the user
   - If guiding, do one problem at a time
   - Else: do all problems
-- 
 
 
 ## Interactive components
